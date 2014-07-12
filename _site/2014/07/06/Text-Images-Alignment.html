@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<title>Css让同一行图片和文字对齐的3种方法</title>
+<meta name="generator" content="Jekyll">
+<meta name="author" content="Huang Chen">
+
+<link rel="stylesheet" type="text/css" href="/css/screen.css">
+<link rel="stylesheet" type="text/css" href="/css/syntax.css">
+</head>
+
+<body>
+<header>
+  <nav>
+    <!-- <div class="headline"><span>Bree's Tech Blog</span></div> -->
+    <div class="menu">
+      <dl><a class="extra" href="/index.html">About</a></dl>
+      <dl><a class="extra" href="/posts.html">Posts</a></dl>
+      <dl><a class="extra" href="/projects.html">Projects</a></dl>
+      <dl><a class="extra" href="/cv/cv.pdf">Resume</a></dl>
+    </div>
+  </nav>
+</header>
+
+<div class="site">
+
+  <!-- <div class="title">
+  	<a href="/">Chen's Blog</a>
+  	<a class="extra" href="/">Home</a>
+  </div> -->
+
+  <div class="wrap"></div>
+  <article>
+  <div id="post">
+	<h1>Css让同一行图片和文字对齐的3种方法</h1>
+	<p class="date">06 Jul 2014 - Hong Kong</p>
+	<p>1、在css中给div添加上“vertical-align:middle”属性：<br>
+   我们用“注册、登陆、找回密码”这个在实际运用中经常遇到的情况来做实例，把“注册”和“登陆”做成图片，“找回密码”设置成文字，其html代码如下：</p>
+
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;denglu&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">&quot;reg.gif&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">&quot;login.gif&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span><span class="nt">&gt;</span>找回密码<span class="nt">&lt;/a&gt;</span>
+<span class="nt">&lt;/div&gt;</span></code></pre></div>
+
+
+<p>css代码：</p>
+
+<div class="highlight"><pre><code class="language-css" data-lang="css"><span class="nf">#denglu</span> <span class="o">*</span><span class="p">{</span>
+  <span class="k">vertical-align</span><span class="o">:</span> <span class="k">middle</span><span class="p">;</span>   <span class="c">/* 居中对齐 */</span>
+  <span class="k">font-size</span><span class="o">:</span> <span class="m">14px</span><span class="p">;</span>
+<span class="p">}</span></code></pre></div>
+
+
+<p>使用css的“vertical-align:middle”属性让图片和文字在同一行对齐是一种非常常用的方法。</p>
+
+<p>2、把图片设置为背景图片：<br>
+如果我们的图片本身是一个背景图片的话，可以在css中使用“background”来设置该图片，然后设置文字的padding属性就可以使他们在同一行显示了，html代码如下：</p>
+
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;denglu&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;zhaohuimima&quot;</span><span class="nt">&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span><span class="nt">&gt;</span>找回密码<span class="nt">&lt;/a&gt;&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span></code></pre></div>
+
+
+<p>css代码：</p>
+
+<div class="highlight"><pre><code class="language-css" data-lang="css"><span class="nf">#denglu</span> <span class="p">{</span>
+    <span class="k">background</span><span class="o">:</span> <span class="sx">url(login.gif)</span> <span class="k">no-repeat</span> <span class="k">left</span> <span class="k">center</span><span class="p">;</span> 
+<span class="p">}</span>
+<span class="nf">#zhaohuimima</span><span class="p">{</span>
+    <span class="k">font-size</span><span class="o">:</span> <span class="m">14px</span><span class="p">;</span>
+    <span class="k">padding-left</span><span class="o">:</span> <span class="m">50px</span><span class="p">;</span>
+<span class="p">}</span></code></pre></div>
+
+
+<p>我们在css中设置了背景图片，然后又设置了文字的padding-left属性，这样，图片和文字就在同一行显示了。</p>
+
+<p>3、下面说下最后一种方法，分别把图片和文字放入不同的div中，然后用“margin”属性进行定位，就可以使他们显示在同一行了，html代码如下：</p>
+
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;denglu&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;zhuce&quot;</span><span class="nt">&gt;</span> <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">&quot;reg.gif&quot;</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;zhaohuimima&quot;</span><span class="nt">&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span><span class="nt">&gt;</span>找回密码<span class="nt">&lt;/a&gt;&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span></code></pre></div>
+
+
+<p>css代码如下：</p>
+
+<div class="highlight"><pre><code class="language-css" data-lang="css"><span class="nf">#zhaohuimima</span><span class="p">{</span>
+    <span class="k">font-size</span><span class="o">:</span><span class="m">14px</span><span class="p">;</span>
+    <span class="k">margin-top</span><span class="o">:-</span><span class="m">16px</span><span class="p">;</span>
+    <span class="k">padding-left</span><span class="o">:</span><span class="m">50px</span><span class="p">;</span>
+<span class="p">}</span></code></pre></div>
+
+
+<p>在浏览器中运行以后，这个方法也可以让图片和文字在同一行显示，但是看起来好像麻烦了一点，所以个人还是比较推荐第一种方法的。</p>
+
+</div>
+
+<div id="related">
+  <h2>Related Posts</h2>
+  <ul class="posts">
+    
+      <li><span>12 Jul 2014</span> &raquo; <a href="/2014/07/12/Blog-Construction.html">博客搭建小结</a></li>
+    
+      <li><span>05 Jul 2014</span> &raquo; <a href="/2014/07/05/Js.html">Js stuff</a></li>
+    
+      <li><span>05 Jul 2014</span> &raquo; <a href="/2014/07/05/About-Scrollbar.html">关于Scroll Bar</a></li>
+    
+  </ul>
+</div>
+
+<!-- Duoshuo Comment BEGIN -->
+<div class="ds-thread"></div>
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"bree"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = 'http://static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		|| document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+</script>
+<!-- Duoshuo Comment END -->
+  </article>
+
+  <div class="footer">
+    <p align="center">
+      © Huang Chen[hchen9122@gmail.com], 2014 &mdash; built with Jekyll
+    </p>
+
+  	<!-- <div class="contact">
+  		<p>
+  			Chen HUANG<br />
+  			Contributor of <a href="http://github.com/">GitHub</a><br />
+  			hchen9122@gmail.com
+  		</p>
+  	</div>
+  	<div class="contact">
+  		<p>
+  			<a href="http://github.com/breehuang">github.com/breehuang</a><br />
+  		</p>
+  	</div>
+  	<div class="rss">
+  		<a href="http://weibo.com/u/1788681064">
+  			<img src="/images/weiboLogo.png" width="43" heigth="42" alt="Subscribe to Weibo" />
+  		</a>
+  	</div> -->
+  </div>
+</div>
+
+<a href="http://github.com/breehuang"><img style="position: fixed; top: 0; right: 0; border: 0; z-index:100;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub"></a>
+
+</body>
+</html>

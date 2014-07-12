@@ -1,0 +1,27 @@
+---
+layout: default
+title: Blog posts
+---
+
+<div id="home">
+<h1>Html & Css</h1>
+<ul class="posts">
+	{% for post in site.tags.Htmlcss %}
+	  <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
+	{% endfor %}
+</ul>
+
+<h1>JavaScript</h1>
+<ul class="posts">
+	{% for post in site.tags.Js %}
+	  <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
+	{% endfor %}
+</ul>
+
+<h1>Other</h1>
+<ul class="posts">
+	{% for post in site.tags.Other %}
+	  <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
+	{% endfor %}
+</ul>
+</div>

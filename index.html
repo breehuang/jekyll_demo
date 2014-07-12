@@ -1,13 +1,23 @@
-
 ---
 layout: default
-title: 我的Blog
 ---
 
-<h2>{{ page.title }}</h2>
-<p>最新文章</p>
-<ul>
-{% for post in site.posts %}
-<li>{{ post.date | date_to_string }} <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
-{% endfor %}
-</ul>
+<div class="me">
+  <h1>Hola.</h1>
+  <img src="/images/me.jpg" id="photo">
+
+  <div class="introduction">
+    <h2>I'm Huang Chen.</h2>
+    <hr/>
+    <p class="p1">I do computer things and write technical stuff here.</p>
+    <p class="p2">I've just got my Msc degree in <a href="http://www.ust.hk">HKUST</a> majoring in Information Technology.<br>
+      I have great interests in front-end development and want to find a job related.</p>
+  </div>
+
+  <div class="social">
+     <i>Social:</i>
+     <a href="http://github.com/breehuang"><img src="/images/github.jpeg"></a>&nbsp;
+     <a href="http://weibo.com/u/1788681064"><img src="/images/weibo.png"></a>&nbsp;
+     <a href="https://www.facebook.com/profile.php?id=100004508533238"><img src="/images/facebook.jpeg"></a>
+  </div>
+</div>
