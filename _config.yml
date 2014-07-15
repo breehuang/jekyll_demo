@@ -1,4 +1,4 @@
-baseurl:     /
+baseurl:     /jekyll_demo
 url:         http://localhost:4000
 highlighter: pygments
 markdown:    rdiscount
